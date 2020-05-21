@@ -1,0 +1,16 @@
+[{
+    "legalId":"GANESATX",
+    "legalName":"Tamilselvan Ganesan",
+    "teamName":"NARS Canada - Canada Team",
+    "sprintNo":"Sprint 72",
+    "committedStoryPoints":24.0,
+    "deliveredStoryPoints":24.0,
+    "availableCapacity":"84",
+    "committedCapacity":73.0,
+    "deliveredCapacity":73.0,
+    "sprintUtilization":86.9,
+    "regularUtilization":72.22,
+    "spillOver":"No",
+    "reasonForSpillOver":"",
+    "userStoryIds":"S-106353;D-26120;S-102575;S-104648;S-104742;S-107415;"
+}]
