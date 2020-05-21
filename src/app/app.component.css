@@ -1,34 +1,30 @@
 .viewData {
-    width: 100%;
-    height: 200px;
+    width: 97%;
+    height: auto;
     float: left;
-    background-color: rgb(90, 194, 212);
+    background-color:#8FB996;
     color: #0e0405;
     padding: 2%;
     margin: 20px;
     border-radius: 10px;
     text-align: center;
+    display: block;
 }
 
 .viewDatabtn {
     height: 80px;
     padding: 20px 175px;
     color: #0e0405;
-    background-color: rgb(90, 194, 212);
-}
-.resultstable
-{
-    width: 100%;
+    background-color:#8FB996;
 }
 
 .resultstable table, th , td  {
-    border: 1px solid grey;
+    width: 2%;
+    border: 1px solid black;
+    font-size: xx-small;
     border-collapse: collapse;
     padding: 5px;
-  }
-  .resultstable table tr:nth-child(odd) {
-    background-color: #f1f1f1;
-  }
-  .resultstable table tr:nth-child(even) {
-    background-color: #ffffff;
-  }
+}
+div{
+    padding: 4px;
+}

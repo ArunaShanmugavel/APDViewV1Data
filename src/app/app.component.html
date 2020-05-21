@@ -1,21 +1,25 @@
 <div class="viewData">
   <div>
     <label for="viewDataText">Enter employee names or file id:</label>
-    <input type="text" id="viewDataText">
-    <input type="radio" value="scrum" name="option" (click)="setoption('scrum')" />Scrum <input type="radio" value="kanban" name="option" (click)="setoption('kanban')"/>Kanban
+    <input class="kanbanText" type="text" id="viewDataText">
+  </div>
+  <div class="radiobtn">
+    <span>Select the report type :</span>
+    <input type="radio" value="scrum" name="option" (click)="setoption('scrum')" />Scrum 
+    <input type="radio" value="kanban" name="option" (click)="setoption('kanban')"/>Kanban
   </div>
 
   <div class="scrum" *ngIf="isSelected('scrum')" >
     <label for="scrumText">Enter the sprint number :<span></span></label>
-    <input type="text" id="sprintNumber">
+    <input class="kanbanText" type="text" id="sprintNumber">
   </div>
   
   <div class="kanban" *ngIf="isSelected('kanban')">
        <label for="scrumText">Select the date :<span></span></label>
-       <input type="date" id="sprintNumber" max="{{maxDate}}">
-</div>
+       <input class="kanbanText" type="date" id="sprintNumber" max="{{maxDate}}">
+  </div>
  
-  <div class="viewDatabtn">
+  <div >
     <input type="button" value="View V1 Data" id="scrumbutton" (click)="viewData()" />
   </div>
 
@@ -32,9 +36,9 @@
           <td *ngFor="let list of items | keys">{{items[list]}}</td>
         </tr>
       </tbody>
-      <tbody *ngIf="data.length == 1">            
-        <tr>           
-          <td *ngFor="let list of data | keys">{{data[list]}}</td>
+      <tbody *ngIf="data.length >= 1">            
+        <tr *ngFor="let items of data">           
+          <td *ngFor="let list of items | keys">{{items[list]}}</td>
         </tr>
       </tbody>
     </table>
