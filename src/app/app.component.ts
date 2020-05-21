@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {DatePipe} from '@angular/common';
 import { assetUrl } from 'src/single-spa/asset-url';
 import {ViewV1Data } from '../service/viewv1data.service';
 import { Observable } from 'rxjs';
@@ -14,10 +15,11 @@ export class AppComponent {
   yoshiUrl = assetUrl("yoshi.png");
   public data;
   isViewData: boolean =false;
-  constructor(public service:ViewV1Data){}
+  constructor(public service:ViewV1Data,public datePipe: DatePipe){}
 
   selectedOption: string="";        
-  
+  maxDate =this.datePipe.transform(new Date(),"yyyy-MM-dd");
+
   setoption(e: string): void   
   { 
      this.selectedOption = e;          
