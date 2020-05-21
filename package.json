@@ -1,5 +1,5 @@
 {
-  "name": "micro-footer",
+  "name": "viewv1data",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build:single-spa": "ng build --prod --deploy-url /dist/micro-footer --output-hashing none",
+    "build:single-spa": "ng build --prod --deploy-url --output-hashing none",
     "serve:single-spa": "ng serve --disable-host-check --port 4201 --deploy-url http://localhost:4201/ --live-reload false"
   },
   "private": true,
@@ -19,6 +19,7 @@
     "@angular/compiler": "~8.1.0",
     "@angular/core": "~8.1.0",
     "@angular/forms": "~8.1.0",
+    "@angular/http": "^7.2.16",
     "@angular/platform-browser": "~8.1.0",
     "@angular/platform-browser-dynamic": "~8.1.0",
     "@angular/router": "~8.1.0",
