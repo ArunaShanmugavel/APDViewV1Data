@@ -3,6 +3,7 @@ import {DatePipe} from '@angular/common';
 import { assetUrl } from 'src/single-spa/asset-url';
 import {ViewV1Data } from '../service/viewv1data.service';
 import { Observable } from 'rxjs';
+import { AppData } from './app.data';
 
 @Component({
   selector: 'app1-root',
@@ -11,8 +12,8 @@ import { Observable } from 'rxjs';
   providers: [ViewV1Data]
 })
 export class AppComponent {
-  title = 'app1';
-  yoshiUrl = assetUrl("yoshi.png");
+  title = 'viewv1data';
+  model = new AppData();
   public data;
   isViewData: boolean =false;
   constructor(public service:ViewV1Data,public datePipe: DatePipe){}
@@ -36,7 +37,7 @@ export class AppComponent {
     
     viewData() {
       if(this.selectedOption==="scrum"){
-          this.data =this.service.getScrumData().subscribe(           
+          this.data =this.service.getScrumData(this.model.employeeName,this.model.sprintNumber).subscribe(           
             res => {
               this.data= res;
               this.isViewData =true;
@@ -47,7 +48,7 @@ export class AppComponent {
         );
       }
       else if(this.selectedOption==="kanban"){
-          this.service.getKanbanData().subscribe(           
+          this.service.getKanbanData(this.model.employeeName,this.model.kanbanDate).subscribe(           
             res => {
               this.data= res;
               this.isViewData =true;

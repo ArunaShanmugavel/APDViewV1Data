@@ -1,7 +1,7 @@
 <div class="viewData">
   <div>
     <label for="viewDataText">Enter employee names or file id:</label>
-    <input class="kanbanText" type="text" id="viewDataText">
+    <input class="kanbanText" type="text" id="viewDataText" [(ngModel)]="model.employeeName">
   </div>
   <div class="radiobtn">
     <span>Select the report type :</span>
@@ -11,12 +11,12 @@
 
   <div class="scrum" *ngIf="isSelected('scrum')" >
     <label for="scrumText">Enter the sprint number :<span></span></label>
-    <input class="kanbanText" type="text" id="sprintNumber">
+    <input class="kanbanText" type="text" id="sprintNumber" [(ngModel)]="model.sprintNumber">
   </div>
   
   <div class="kanban" *ngIf="isSelected('kanban')">
        <label for="scrumText">Select the date :<span></span></label>
-       <input class="kanbanText" type="date" id="sprintNumber" max="{{maxDate}}">
+       <input class="kanbanText" type="date" id="sprintNumber" max="{{maxDate}}" [(ngModel)]="model.kanbanDate">
   </div>
  
   <div >
@@ -30,12 +30,6 @@
           <th *ngFor="let head of data[0] | keys">{{head | uppercase}}</th>
         </tr>
       </thead>
-
-      <tbody *ngIf="data.length>1">            
-        <tr *ngFor="let items of data">           
-          <td *ngFor="let list of items | keys">{{items[list]}}</td>
-        </tr>
-      </tbody>
       <tbody *ngIf="data.length >= 1">            
         <tr *ngFor="let items of data">           
           <td *ngFor="let list of items | keys">{{items[list]}}</td>

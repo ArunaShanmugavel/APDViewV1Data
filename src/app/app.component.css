@@ -17,11 +17,15 @@
     color: #0e0405;
     background-color:#8FB996;
 }
-
+.results  {
+    overflow-x: auto;
+}
+.resultstable {
+    width: 100%;
+}
 .resultstable table, th , td  {
     width: 2%;
-    border: 1px solid black;
-    font-size: xx-small;
+    border: 1px solid black;    
     border-collapse: collapse;
     padding: 5px;
 }
